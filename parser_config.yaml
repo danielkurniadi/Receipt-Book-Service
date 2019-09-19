@@ -1,0 +1,76 @@
+# MARKET KEYWORDS
+# .. Market names roughly ordered by likelyhood.
+# .. Contain market locations for fuzzy parsing
+market_keywords:
+  Penny:
+    - penny
+    - p e n n y
+    - m a r k t gmbh
+  Grocery:
+    - grocery
+    - grocery store
+    - groceries
+    - supermarket
+    - giant
+    - g i a n t
+    - minimarket
+    - seven-eleven
+    - seven 11
+    - sevel eleven
+    - cherios
+    - fair price
+    - fairprice
+    - f a i r p r i c e
+    - fair-price
+  FastFood:
+    - long john
+    - longjohn
+    - long john silver
+    - long john's silver
+    - macs
+    - mac donald
+  CoffeeShop:
+    - starbucks
+    - coffee
+    - cafe
+    - star bucks
+  Kaiser's:
+    - kaiser
+    - kaiserswerther straße 270
+  Aldi:
+    - aldi
+    - friedrichstr 128—133
+  Lidl:
+    - lidl
+  Edeka:
+    - edeka
+  Drogerie:
+    - drogerie
+  Kodi:
+    - kodi
+
+
+# SUM KEYWORDS
+# .. Sum or total price keywords
+sum_keywords:
+  - price
+  - summe
+  - amount
+  - amount due
+  - gesamt
+  - total
+  - total due
+  - total amount due
+  - base
+  - sum
+  - zwischensumme
+  - bar
+
+
+# SUM REGX PATTERN
+sum_pattern: '[-+]?\d*\.\d+|\d+'
+
+
+# DATES
+# .. Matches dates like 19.08.15 and 19. 08. 2015
+date_format: '.*?(?P<date>(\d{2,4}(\.\s?|[^a-zA-Z\d])\d{2}(\.\s?|[^a-zA-Z\d])(20)?1[3-6]))\s+'
