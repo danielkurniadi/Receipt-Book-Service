@@ -4,6 +4,7 @@ from app.parser.text_receipt_parser import (
     parse_sum_in_text
 )
 
+from app.bridges.errors import ServerOk, Error
 
 # ------------------------
 # MANAGER HELPER
@@ -18,19 +19,17 @@ def __check_user_owns_receipt(user_id, receipt_id):
 # LEVEL PUBLIC
 # ------------------------
 
-def summarize_receipt_file(imgfile_path):
-    extracted_text = ocr_parse_image_to_text(imgfile_path)
+def summarize_receipt_file(img_stream):
+    extracted_text = ocr_parse_image_to_text(img_stream)
     if not extracted_text:
-        return None, {}
+        return ServerOk, {}
     total_sum = parse_sum_in_text(extracted_text)
     market = parse_market_in_text(extracted_text)
-    date = "12-09-2018" #TODO: parse_date_in_text
+    date = "12-09-2018"
     receipt_summary = {
         'totalSum': total_sum,
         'market': market,
         'date': date
     }
     return ServerOk(), receipt_summary
-
-
 
