@@ -17,6 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import numpy as np
 import pytesseract
 
 try:
@@ -24,16 +25,16 @@ try:
 except ImportError:
     import Image
 
-from app.parser.img_processing import (
+from app.parser.libs.img_processing import (
     sharpen_image, deskew_image
 )
 
 
-def ocr_parse_image_to_text(imgfile_path):
+def ocr_parse_image_to_text(img_stream):
     """Handler image to text
     """
     # image preprocessings
-    np_image = np.array(Image.open(imgfile_path))
+    np_image = np.array(Image.open(img_stream))
     sharpened_image = sharpen_image(np_image)
     deskewed_image = deskew_image(sharpened_image)
 

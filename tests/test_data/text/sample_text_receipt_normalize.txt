@@ -1,0 +1,16 @@
+ALL UPPER CASE
+
+Some Upper Case
+
+   White Spaces
+
+    tab     tab whitespaces
+
+99.00
+$5,80 cent   -0,9 cent  Bonus: $90,789
+
+
+
+Trailing whitespaces after this line.
+
+

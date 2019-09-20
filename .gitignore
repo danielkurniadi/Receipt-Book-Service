@@ -5,6 +5,9 @@
 ### IDE ###
 .vscode
 
+! tests/test_output/rotate_img/.keep
+! tests/test_output/sharpen_img/.keep
+tests/test_output/*
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
